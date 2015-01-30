@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<link href="6_DeathrayMenu.css" type="text/css" rel="stylesheet"/>
+	<script src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="DeathrayMenuController">
+		<ul>
+			<li class="menu-disabled-{{isDisabled}}" ng-click="stun()">Stun</li>
+		</ul>
+	</div>
+	<script>
+		function DeathrayMenuController($scope){
+			$scope.isDisabled = false;
+			$scope.stun = function(){
+				$scope.isDisabled = !$scope.isDisabled;
+			}
+		}
+	</script>
+</body>
+</html>

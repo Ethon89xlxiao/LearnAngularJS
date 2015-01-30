@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<script src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="StudentListController">
+		<ul>
+			<li ng-repeat="student in students">
+				<a href="/student/view/{{student.id}}">{{student.name}}</a>
+			</li>
+		</ul>
+		<button ng-click="insertTom()">insert</button>
+	</div>
+	<div ng-controller="AlbumController">
+		<table>
+			<tr ng-repeat="track in album">
+				<td>{{$index + 1}}</td>
+				<td>{{track.name}}</td>
+				<td>{{track.age}}</td>
+			</tr>
+		</table>
+	</div>
+	<script>
+		var students = [{name:"Mary Contrary",id:"1"},{name:"Jack Sprat", id:"2"},{name:"Jill hill", id:"3"}];
+		function StudentListController($scope){
+			$scope.students = students;
+			$scope.insertTom = function(){
+				$scope.students.splice(1, 0, {name:"Tom Thumb", id:"4"});
+			}
+		}
+		var album =[{name:"xxl", age:20},
+			       {name:"xlxiao", age:21}];
+		function AlbumController($scope){
+			$scope.album = album;
+		}
+	</script>
+</body>
+</html>

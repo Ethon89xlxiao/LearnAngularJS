@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<script src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>
+</head>
+<body>
+	<div class="navbar" ng-controller="NavController">
+		<li class="menu-item" ng-click="dosomething()">Someting</li>
+	</div>
+	<div class="cowntentArea" ng-controller="ContentAreaController">
+		<div ng-click="dosomething()"></div>
+	</div>
+	<script>
+		function NavController($scope){
+			$scope.doSomething = doA;
+		}
+		function ContentAreaController($scope){
+			$scope.doSomething = doB;
+		}
+	</script>
+</body>
+</html>

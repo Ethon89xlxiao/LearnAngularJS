@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<script src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>
+</head>
+<body>
+	<form ng-controller="StartUpController">
+		Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+		Recommendation: {{needed}}
+		<button ng-click="requestFunding()">Fund my startup!</button>
+		<button ng-click="reset()">Reset</button>
+	</form>
+	<script>
+		function StartUpController($scope){
+			$scope.computeNeeded = function(){
+				$scope.needed = $scope.startingEstimate * 10;
+			}
+			$scope.requestFunding = function(){
+				window.alert("Sorry, please get more customers first.");
+			};
+			$scope.reset = function(){
+				$scope.startingEstimate = 0;
+			};
+		}
+	</script>
+</body>
+</html>
